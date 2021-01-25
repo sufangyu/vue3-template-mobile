@@ -1,0 +1,15 @@
+/**
+ * 点击态
+ * @example scss
+ *
+ * .element {
+ *   @include active;
+ * }
+ */
+ @mixin active {
+  transition: background-color 0.3s;
+
+  &:active {
+    background-color: #eee;
+  }
+}
