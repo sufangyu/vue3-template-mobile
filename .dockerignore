@@ -1,0 +1,4 @@
+.git
+.VSCodeCounter
+node_modules
+*.log
