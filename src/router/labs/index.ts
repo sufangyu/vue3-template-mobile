@@ -21,6 +21,14 @@ export default [
           title: 'Request 请求',
         },
       },
+      {
+        path: 'filter',
+        name: 'LabsFilter',
+        component: () => import('@/views/labs/filter.vue'),
+        meta: {
+          title: 'Filter 过滤器',
+        },
+      },
     ],
   },
 ];

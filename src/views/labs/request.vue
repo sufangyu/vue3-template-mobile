@@ -9,7 +9,8 @@
 </template>
 
 <script>
-import { defineComponent, getCurrentInstance } from 'vue';
+import { defineComponent } from 'vue';
+import { useRoute } from 'vue-router';
 import { getList, createNews } from '@/api/test';
 import DemoName from './components/demo-name.vue';
 
@@ -18,9 +19,7 @@ export default defineComponent({
     DemoName,
   },
   setup() {
-    const { currentRoute } = getCurrentInstance().ctx.$router;
-    const meta = currentRoute?.value?.meta ?? {};
-
+    const { title = '' } = useRoute().meta ?? {};
     async function handleGetList() {
       const params = {
         ids: [1, 2, 3, 4],
@@ -43,7 +42,7 @@ export default defineComponent({
     }
 
     return {
-      pageTitle: meta?.title,
+      pageTitle: title,
       handleGetList,
       handlePost,
     };

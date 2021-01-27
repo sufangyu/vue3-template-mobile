@@ -26,10 +26,10 @@
             }"
           />
           <van-cell
-            title="Precision 小数精准度"
+            title="Filter 过滤器"
             is-link
             :to="{
-              name: 'Home',
+              name: 'LabsFilter',
             }"
           />
         </van-collapse-item>
@@ -74,7 +74,7 @@ export default {
     margin-bottom: 15px;
   }
 
-  ::v-deep {
+  :deep {
     .van-collapse-item__title {
       font-size: 16px;
       line-height: 36px;
