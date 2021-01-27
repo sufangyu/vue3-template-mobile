@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <img src="@/assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
     <van-button @click="handleUpdate">更新用户信息</van-button>
     <p>{{ info }}</p>
@@ -36,3 +37,11 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+img {
+  display: block;
+  width: 120px;
+  margin: 0 auto;
+}
+</style>

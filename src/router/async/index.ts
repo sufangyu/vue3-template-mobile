@@ -12,10 +12,4 @@ export default [
     name: 'About',
     component: () => import('@/views/about.vue'),
   },
-  // 没有匹配对应的路由
-  {
-    path: '/:pathMatch(.*)*',
-    redirect: '/404',
-    hidden: true,
-  },
 ];

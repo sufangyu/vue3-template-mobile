@@ -6,12 +6,17 @@ import routerLabsMap from './labs';
 
 // 开发环境注入 labs 路由
 if (process.env.NODE_ENV === 'development') {
-  routerConstantMap.push(...routerLabsMap);
+  routerConstantMap.unshift(...routerLabsMap);
 }
 
 const routes: Array<RouteRecordRaw> = [
-  ...routerConstantMap,
   ...routerAsyncMap,
+  ...routerConstantMap,
+  // 没有匹配对应的路由
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/404',
+  },
 ];
 
 const router = createRouter({
