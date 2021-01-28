@@ -96,3 +96,14 @@ a {
 img {
   max-width: 100%;
 }
+
+
+// 容器
+.container {
+  min-height: 100vh;
+  background-color: $fill-body;
+
+  &-white {
+    background-color: $fill-body-white;
+  }
+}

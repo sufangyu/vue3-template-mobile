@@ -1,15 +1,39 @@
 <template>
-  <div class="home">
+  <div class="container container-white">
+    <white-space size="lg" />
+    <img src="@/assets/logo.png" />
+    <white-space size="lg" />
+
+    <van-grid clickable square>
+      <van-grid-item
+        icon="apps-o"
+        text="全局状态"
+        :to="{ name: 'About' }"
+      />
+      <van-grid-item
+        icon="apps-o"
+        text="网络请求"
+        :to="{ name: 'LabsRequest' }"
+      />
+      <van-grid-item
+        :badge="5"
+        icon="apps-o"
+        text="实验室"
+        :to="{ name: 'Labs' }"
+      />
+      <van-grid-item
+        icon="apps-o"
+        text="其他"
+        @click="hansleShowNotify"
+      />
+    </van-grid>
+
+    <white-space size="lg" />
+
     <wing-blank>
       <white-space size="lg" />
-      <img src="@/assets/logo.png" />
-      <p>
-        <router-link :to="{ name: 'About' }">关于我们</router-link>
-      </p>
-
+      <van-button size="small" @click="handleUpdate">更新用户信息</van-button>
       <white-space size="lg" />
-      <van-button @click="handleUpdate">更新用户信息</van-button>
-      <p>{{ info }}</p>
       <p>{{ user }}</p>
     </wing-blank>
   </div>
@@ -18,12 +42,10 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
 import { useStore } from 'vuex';
+import { Notify } from 'vant';
 import { key } from '@/store';
-import wingBlank from '@/components/wing-blank/wing-blank.vue';
-import WhiteSpace from '@/components/white-space/white-space.vue';
 
 export default defineComponent({
-  components: { wingBlank, WhiteSpace },
   name: 'Home',
   setup() {
     const store = useStore(key);
@@ -35,10 +57,14 @@ export default defineComponent({
       });
     }
 
+    function hansleShowNotify() {
+      Notify({ type: 'primary', message: '功能暂未开放' });
+    }
+
     return {
-      info: computed(() => base.info),
       user: computed(() => base.user),
       handleUpdate,
+      hansleShowNotify,
     };
   },
 });
