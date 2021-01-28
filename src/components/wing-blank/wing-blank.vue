@@ -8,16 +8,18 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue';
+/** 两翼留白的间距 */
+import { computed, defineComponent, PropType } from 'vue';
+import { Size } from './types';
 
-// 两翼留白的间距，可选sm, md, lg
 export default defineComponent({
   name: 'WingBlank',
   props: {
+    /** 可选sm, md, lg */
     size: {
-      type: String,
+      type: String as PropType<Size>,
       default: 'lg',
-      validator: (value: string) => ['sm', 'md', 'lg'].indexOf(value) !== -1,
+      validator: (value: Size) => ['sm', 'md', 'lg'].indexOf(value) !== -1,
     },
   },
   setup(props) {

@@ -1,0 +1,16 @@
+import { createApp } from 'vue';
+import WingBlank from '@/components/wing-blank';
+import WhiteSpace from '@/components/white-space';
+import App from './App.vue';
+
+const app = createApp(App);
+const components: any = {
+  WingBlank,
+  WhiteSpace,
+};
+
+Object.keys(components).forEach((key: any) => {
+  app.component(key, components[key]);
+});
+
+export default app;
