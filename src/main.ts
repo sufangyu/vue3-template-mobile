@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 import Vant from 'vant';
 import 'vant/lib/index.css';
 
-import WingBblank from './components/wing-blank';
+import WingBlank from './components/wing-blank';
 
 import App from './App.vue';
 import router from './router';
@@ -16,4 +16,4 @@ app.use(store, key)
   .mount('#app');
 
 // 全局组件
-app.component('wing-blank', WingBblank);
+app.component('wing-blank', WingBlank);

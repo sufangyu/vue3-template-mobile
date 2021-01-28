@@ -1,7 +1,7 @@
 <template>
   <section>
     <demo-name :title="pageTitle"></demo-name>
-    <WingBlank>
+    <wing-blank>
       <p>格式化时间：{{ formatTime(new Date()) }}</p>
       <p>手机：{{ formatPhone(15912345678) }}</p>
       <p>手机：{{ formatPhoneHide(15912345678) }}</p>
@@ -10,7 +10,7 @@
       <p>千分位：{{ toThousands('5000039.00') }}</p>
       <p>小数位：{{ formatFloat(3.141590) }}</p>
       <p>中文数字：{{ convertCurrency(1100.1) }}</p>
-    </WingBlank>
+    </wing-blank>
   </section>
 </template>
 

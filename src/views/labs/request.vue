@@ -1,15 +1,18 @@
 <template>
   <section>
     <demo-name :title="pageTitle"></demo-name>
-    <div class="demo-content">
-      <van-button type="primary" @click="handleGetList">GET 请求</van-button>
-      <van-button type="success" @click="handlePost">POST 请求</van-button>
-    </div>
+    <wing-blank class="demo-content">
+      <div>
+        <van-button type="primary" @click="handleGetList">GET 请求</van-button>
+        <van-button type="success" @click="handlePost">POST 请求</van-button>
+      </div>
+      <p>列表长度：{{ listLength }}</p>
+    </wing-blank>
   </section>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { getList, createNews } from '@/api/test';
 import DemoName from './components/demo-name.vue';
@@ -20,6 +23,8 @@ export default defineComponent({
   },
   setup() {
     const { title = '' } = useRoute().meta ?? {};
+    const listLength = ref(0);
+
     async function handleGetList() {
       const params = {
         ids: [1, 2, 3, 4],
@@ -27,6 +32,7 @@ export default defineComponent({
       try {
         const { data } = await getList(params);
         console.log(data?.list);
+        listLength.value = data?.list.length;
       } catch (error) {
         console.log(error);
       }
@@ -45,6 +51,7 @@ export default defineComponent({
       pageTitle: title,
       handleGetList,
       handlePost,
+      listLength,
     };
   },
 });
@@ -52,7 +59,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .demo-content {
-  padding: 15px;
+  p {
+    padding: 8px 0;
+  }
 
   .van-button--small,
   .van-button--normal:not(:last-child) {

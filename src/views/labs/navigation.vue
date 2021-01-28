@@ -21,9 +21,7 @@
           <van-cell
             title="Request 请求"
             is-link
-            :to="{
-              name: 'LabsRequest',
-            }"
+            :to="{ name: 'LabsRequest' }"
           />
           <van-cell
             title="Filter 过滤器"

@@ -36,6 +36,7 @@ export function formatFloat(val: string | number, pos = 2): string | false {
   }
 
   // pow 幂
+  // eslint-disable-next-line no-restricted-properties
   formatVal = Math.round(Number(val) * Math.pow(10, pos)) / Math.pow(10, pos);
   let formatValStr = formatVal.toString();
   let valDot = formatValStr.indexOf('.');
@@ -57,7 +58,7 @@ export function formatFloat(val: string | number, pos = 2): string | false {
  * @param {(string | number)} money 金额
  * @returns {string}
  */
-export function convertCurrency(money:string | number): string {
+export function convertCurrency(money: string | number): string {
   const maxNum = 999999999999999.9999; // 最大处理的数字
 
   if (money === '') {
