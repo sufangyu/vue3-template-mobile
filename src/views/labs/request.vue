@@ -6,6 +6,7 @@
         <van-button type="primary" @click="handleGetList">GET 请求</van-button>
         <van-button type="success" @click="handlePost">POST 请求</van-button>
       </div>
+      <white-space />
       <p>列表长度：{{ listLength }}</p>
     </wing-blank>
   </section>
@@ -56,10 +57,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .demo-content {
-  p {
-    padding: 8px 0;
-  }
-
   .van-button--small,
   .van-button--normal:not(:last-child) {
     margin-right: 16px;

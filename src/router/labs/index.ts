@@ -14,6 +14,22 @@ export default [
         },
       },
       {
+        path: 'white-space',
+        name: 'LabsWhiteSpace',
+        component: () => import('@/views/labs/white-space-demo.vue'),
+        meta: {
+          title: 'WhiteSpace 上下留白',
+        },
+      },
+      {
+        path: 'wing-blank',
+        name: 'LabsWingBlank',
+        component: () => import('@/views/labs/wing-blank-demo.vue'),
+        meta: {
+          title: 'WingBlank 两翼留白',
+        },
+      },
+      {
         path: 'request',
         name: 'LabsRequest',
         component: () => import('@/views/labs/request.vue'),

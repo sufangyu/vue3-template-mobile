@@ -49,7 +49,8 @@ export default {
       {
         title: '布局 Layout',
         list: [
-          { title: '两边空白', isLink: true, toRouteName: 'Home' },
+          { title: 'WhiteSpace 上下留白', isLink: true, toRouteName: 'LabsWhiteSpace' },
+          { title: 'WingBlank 两翼留白', isLink: true, toRouteName: 'LabsWingBlank' },
         ],
       },
       {
