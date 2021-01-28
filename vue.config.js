@@ -62,7 +62,7 @@ module.exports = {
       .rule('images')
       .use('url-loader')
       .loader('url-loader')
-      .tap(options => merge(options, {
+      .tap((options) => merge(options, {
         limit: 1024 * 1,
       }));
 
@@ -81,6 +81,13 @@ module.exports = {
           .use(BundleAnalyzer.BundleAnalyzerPlugin);
       }
     }
+  },
 
+  devServer: {
+    open: true,
+    overlay: {
+      warnings: true,
+      errors: true,
+    },
   },
 };
