@@ -1,6 +1,6 @@
 <template>
   <section>
-    <demo-name :title="pageTitle"></demo-name>
+    <demo-name />
     <wing-blank class="demo-content">
       <p>
         四舍五入：
@@ -39,7 +39,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { useRoute } from 'vue-router';
 import NP from 'number-precision';
 import WingBlank from '@/components/wing-blank/wing-blank.vue';
 import DemoName from './components/demo-name.vue';
@@ -47,10 +46,7 @@ import DemoName from './components/demo-name.vue';
 export default defineComponent({
   components: { DemoName, WingBlank },
   setup() {
-    const { title = '' } = useRoute().meta ?? {};
-
     return {
-      pageTitle: title,
       strip: NP.strip(0.09999999999999998),
       plus: NP.plus(0.1, 0.2),
       minus: NP.minus(1.0, 0.9),

@@ -6,12 +6,13 @@
     >
       <van-icon name="wap-home-o" />
     </router-link>
-    {{ title }}
+    {{ demoTitle }}
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useRoute } from 'vue-router';
 
 export default defineComponent({
   props: {
@@ -21,7 +22,11 @@ export default defineComponent({
     },
   },
   setup() {
-    return {};
+    const { title = '' } = useRoute().meta ?? {};
+
+    return {
+      demoTitle: title,
+    };
   },
 });
 </script>

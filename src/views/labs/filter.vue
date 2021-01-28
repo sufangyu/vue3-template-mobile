@@ -1,6 +1,6 @@
 <template>
   <section>
-    <demo-name :title="pageTitle"></demo-name>
+    <demo-name />
     <wing-blank>
       <p>格式化时间：{{ formatTime(new Date()) }}</p>
       <p>手机：{{ formatPhone(15912345678) }}</p>
@@ -16,7 +16,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { useRoute } from 'vue-router';
 import {
   formatTime, formatPhone, formatPhoneHide, formatBank,
   toThousands, formatFloat, convertCurrency,
@@ -28,10 +27,7 @@ export default defineComponent({
     DemoName,
   },
   setup() {
-    const { title = '' } = useRoute().meta ?? {};
-
     return {
-      pageTitle: title,
       formatTime,
       formatPhone,
       formatPhoneHide,

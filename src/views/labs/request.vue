@@ -1,6 +1,6 @@
 <template>
   <section>
-    <demo-name :title="pageTitle"></demo-name>
+    <demo-name />
     <wing-blank class="demo-content">
       <div>
         <van-button type="primary" @click="handleGetList">GET 请求</van-button>
@@ -13,7 +13,6 @@
 
 <script>
 import { defineComponent, ref } from 'vue';
-import { useRoute } from 'vue-router';
 import { getList, createNews } from '@/api/test';
 import DemoName from './components/demo-name.vue';
 
@@ -22,7 +21,6 @@ export default defineComponent({
     DemoName,
   },
   setup() {
-    const { title = '' } = useRoute().meta ?? {};
     const listLength = ref(0);
 
     async function handleGetList() {
@@ -48,7 +46,6 @@ export default defineComponent({
     }
 
     return {
-      pageTitle: title,
       handleGetList,
       handlePost,
       listLength,
