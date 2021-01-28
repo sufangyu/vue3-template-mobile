@@ -29,6 +29,14 @@ export default [
           title: 'Filter 过滤器',
         },
       },
+      {
+        path: 'precision',
+        name: 'LabsPrecision',
+        component: () => import('@/views/labs/precision.vue'),
+        meta: {
+          title: 'Precision 小数精准度',
+        },
+      },
     ],
   },
 ];

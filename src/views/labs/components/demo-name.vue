@@ -41,12 +41,13 @@ export default defineComponent({
     font-size: 20px;
     position: relative;
     vertical-align: middle;
+    color: $color-text-base;
 
     &::after {
       content: "";
       position: absolute;
       top: 1px;
-      right: -14px;
+      right: -12px;
       width: 1px;
       height: 15px;
       background-color: #ccc;

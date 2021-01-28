@@ -10,25 +10,29 @@
         :border="false"
         v-model="activeLayout"
       >
-        <van-collapse-item title="布局 Layout">内容</van-collapse-item>
+        <van-collapse-item :title="navigates[0].title">
+          <van-cell
+            v-for="(item, idx) in navigates[0].list"
+            :key="idx"
+            :title="item.title"
+            :is-link="item.isLink"
+            :to="{ name: item.toRouteName }"
+          />
+        </van-collapse-item>
       </van-collapse>
+
       <van-collapse
         accordion
         :border="false"
         v-model="activeOthers"
       >
-        <van-collapse-item title="其他 Others">
+        <van-collapse-item :title="navigates[1].title">
           <van-cell
-            title="Request 请求"
-            is-link
-            :to="{ name: 'LabsRequest' }"
-          />
-          <van-cell
-            title="Filter 过滤器"
-            is-link
-            :to="{
-              name: 'LabsFilter',
-            }"
+            v-for="(item, idx) in navigates[1].list"
+            :key="idx"
+            :title="item.title"
+            :is-link="item.isLink"
+            :to="{ name: item.toRouteName }"
           />
         </van-collapse-item>
       </van-collapse>
@@ -41,9 +45,26 @@ import { ref } from 'vue';
 
 export default {
   setup() {
+    const NAVIGATES = [
+      {
+        title: '布局 Layout',
+        list: [
+          { title: '两边空白', isLink: true, toRouteName: 'Home' },
+        ],
+      },
+      {
+        title: '其他 Others',
+        list: [
+          { title: 'Request 请求', isLink: true, toRouteName: 'LabsRequest' },
+          { title: 'Filter 过滤器', isLink: true, toRouteName: 'LabsFilter' },
+          { title: 'Precision 小数精准度', isLink: true, toRouteName: 'LabsPrecision' },
+        ],
+      },
+    ];
     return {
       activeLayout: ref(null),
       activeOthers: ref(null),
+      navigates: NAVIGATES,
     };
   },
 };

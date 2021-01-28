@@ -80,16 +80,16 @@ body {
 }
 
 a {
-  color: #222; // $color-link
+  color: $color-link;
   text-decoration: none;
   user-select: none;
   outline: none;
 
   &:hover {
-    color: #007fff; // $color-link-hover
+    color: $color-link-hover;
   }
   &:active {
-    color: #007fff; // $color-link-tap
+    color: $color-link-tap;
   }
 }
 
