@@ -7,7 +7,7 @@ module.exports = {
     '//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css',
   ],
   js: [
-    '//cdn.jsdelivr.net/npm/vue@next',
+    '//cdn.jsdelivr.net/npm/vue@3.0.5/dist/vue.global.prod.js',
     '//unpkg.com/vue-router@4.0.1/dist/vue-router.global.js',
     '//cdn.bootcdn.net/ajax/libs/vuex/4.0.0-rc.1/vuex.global.js',
     '//cdn.jsdelivr.net/npm/vant@next/lib/vant.min.js',

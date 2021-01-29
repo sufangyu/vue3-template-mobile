@@ -94,19 +94,18 @@ export default {
     margin-bottom: 15px;
   }
 
-  :deep {
-    .van-collapse-item__title {
-      font-size: 16px;
-      line-height: 36px;
-      align-items: center;
-    }
+  :deep(.van-collapse-item__title) {
+    font-size: 16px;
+    line-height: 36px;
+    align-items: center;
+  }
 
-    .van-collapse-item__content {
-      padding: 0;
-      .van-cell {
-        &::after {
-          right: 0;
-        }
+  :deep(.van-collapse-item__content) {
+    padding: 0;
+
+    .van-cell {
+      &::after {
+        right: 0;
       }
     }
   }
