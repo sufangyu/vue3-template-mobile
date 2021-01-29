@@ -3,6 +3,9 @@
     <white-space size="lg" />
     <img src="@/assets/logo.png" />
     <white-space size="lg" />
+    <h1 class="description">
+      Vue3 + TS + <a href="https://vant-contrib.gitee.io/vant/v3/" target="_blank">Vant</a>
+    </h1>
 
     <van-grid clickable square>
       <van-grid-item
@@ -75,5 +78,10 @@ img {
   display: block;
   width: 120px;
   margin: 0 auto;
+}
+.description {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 24px;
 }
 </style>
