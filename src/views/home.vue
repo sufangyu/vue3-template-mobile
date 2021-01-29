@@ -6,12 +6,12 @@
 
     <van-grid clickable square>
       <van-grid-item
-        icon="apps-o"
+        icon="cluster-o"
         text="全局状态"
         :to="{ name: 'About' }"
       />
       <van-grid-item
-        icon="apps-o"
+        icon="exchange"
         text="网络请求"
         :to="{ name: 'LabsRequest' }"
       />
@@ -22,7 +22,7 @@
         :to="{ name: 'Labs' }"
       />
       <van-grid-item
-        icon="apps-o"
+        icon="ellipsis"
         text="其他"
         @click="hansleShowNotify"
       />
