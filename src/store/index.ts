@@ -3,7 +3,7 @@ import {
   createStore, createLogger,
   Store, useStore as baseUseStore,
 } from 'vuex';
-import { StateType } from '@/types';
+import { StateType } from '@/types/store';
 
 
 const modulesFiles = require.context('./modules', true, /^.*?((?<!\.d\.ts)(?<!\.d))$/);
