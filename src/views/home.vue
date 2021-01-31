@@ -35,9 +35,18 @@
 
     <wing-blank>
       <white-space size="lg" />
-      <van-button size="small" @click="handleUpdate">更新用户信息</van-button>
+      <van-button size="small" @click="handleUpdate">
+        更新用户信息
+      </van-button>
       <white-space size="lg" />
       <p>{{ user }}</p>
+    </wing-blank>
+
+    <white-space size="lg" />
+    <wing-blank>
+      <p class="icon-demo">
+        SVG 图标：<icon-svg name="wechat" />
+      </p>
     </wing-blank>
   </div>
 </template>
@@ -83,5 +92,9 @@ img {
   text-align: center;
   padding: 20px 0;
   font-size: 24px;
+}
+.icon-demo {
+  font-size: 22px;
+  color: #007fff;
 }
 </style>

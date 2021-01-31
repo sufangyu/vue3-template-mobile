@@ -5,8 +5,10 @@ import app from './global';
 import router from './router';
 import store, { key } from './store';
 import './permission';
-// 调试控制台
-import './logger';
+
+// 插件
+import './plugins/logger';
+import './plugins/icon';
 
 app.use(store, key)
   .use(router)
