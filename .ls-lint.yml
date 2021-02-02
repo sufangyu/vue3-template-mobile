@@ -1,0 +1,32 @@
+# 文件命名校验规则. https://ls-lint.org
+#
+# kebab-case | camelCase | PascalCase
+#
+# 规则	      别名	        描述
+# regex	      -	           匹配正则表达式模式：^ {pattern} $
+# lowercase	  -	           每个字母必须小写 忽略非字母
+# camelcase	  camelCase	   字符串必须为camelCase 只允许使用字母和数字
+# pascalcase	PascalCase	 字符串必须为Pascalcase 只允许使用字母和数字
+# snakecase	  snake_case	 字符串必须为snake_case 只允许使用小写字母，数字和_
+# kebabcase	  kebab-case	 字符串必须为kebab-case 仅小写字母，数字和-允许
+# pointcase	  point.case	 字符串必须为“小写” 仅小写字母，数字和.允许的
+
+ls:
+  .js: kebabcase | pointcase
+  .ts: kebabcase | pointcase
+  .d.ts: kebabcase | pointcase
+  .vue: kebabcase | pointcase
+  .tsx: kebabcase | pointcase
+  .css: kebabcase | pointcase
+  .scss: kebabcase | pointcase
+  .json: kebabcase | pointcase
+  .spec.ts: kebabcase | pointcase
+  .mock.ts: kebabcase | pointcase
+
+ignore:
+  - dist
+  - docs
+  - node_modules
+  - .git
+  - .cz-config.js
+  - src/App.vue
