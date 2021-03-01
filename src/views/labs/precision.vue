@@ -40,11 +40,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import NP from 'number-precision';
-import WingBlank from '@/components/wing-blank/wing-blank.vue';
 import DemoName from './components/demo-name.vue';
 
 export default defineComponent({
-  components: { DemoName, WingBlank },
+  components: { DemoName },
   setup() {
     return {
       strip: NP.strip(0.09999999999999998),

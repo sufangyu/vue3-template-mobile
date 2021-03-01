@@ -2,9 +2,10 @@
 import { defineComponent, PropType } from 'vue';
 import './index.scss';
 
-export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 export default defineComponent({
+  name: 'WhiteSpace',
   props: {
     size: {
       type: String as PropType<Size>,
