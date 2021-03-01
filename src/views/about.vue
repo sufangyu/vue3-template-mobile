@@ -25,10 +25,8 @@ import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 import { Toast } from 'vant';
 import { key } from '@/store';
-import whiteSpace from '@/components/white-space/white-space.vue';
 
 export default defineComponent({
-  components: { whiteSpace },
   setup() {
     const { state } = useStore(key);
     const currentRouter = useRouter();

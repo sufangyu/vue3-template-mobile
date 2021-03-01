@@ -1,0 +1,21 @@
+.whitespace {
+  &.whitespace-xs {
+    height: 3px;
+  }
+
+  &.whitespace-sm {
+    height: 6px;
+  }
+
+  &.whitespace-md {
+    height: 9px;
+  }
+
+  &.whitespace-lg {
+    height: 15px;
+  }
+
+  &.whitespace-xl {
+    height: 21px;
+  }
+}

@@ -77,6 +77,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": "vue-cli-service lint",
-    "src/**/*": ["npm run ls-lint"]
+    "src/**/*": [
+      "npm run ls-lint"
+    ]
   }
 }
