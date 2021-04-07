@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script>
+		  !function(win) {
+			  var doc = win.document;
+			  var htmlEle = doc.documentElement;
+			  var dpr = win.devicePixelRatio || 1;
+			  var eventType = 'orientationchange' in win ? 'orientationchange' : 'resize';
+			  var setFontSize = function() {
+				  var screenWidth = htmlEle.getBoundingClientRect().width || 375;
+				  if (1 == dpr || screenWidth > 750) {
+					  screenWidth = 750;
+				  }
+				  htmlEle.style.fontSize = screenWidth / 7.5 + 'px';
+			  };
+			  htmlEle.setAttribute('data-dpr', dpr);
+			  win.addEventListener(eventType, setFontSize, false);
+			  doc.addEventListener('DOMContentLoaded', function() {
+				  setTimeout(setFontSize);
+			  }, false);
+		  }(window)
+    </script>
+    <script src="//cdn.bootcss.com/fastclick/1.0.5/fastclick.js"></script>
+    <script>
+		  if ('addEventListener' in document) {
+			  document.addEventListener('DOMContentLoaded', function() {
+				  FastClick.attach(document.body);
+			  }, false);
+		  }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

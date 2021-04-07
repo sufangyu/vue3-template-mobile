@@ -37,4 +37,4 @@ const data = Mock.mock({
   ],
 });
 
-module.exports = data;
+export default data;

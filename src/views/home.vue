@@ -27,7 +27,7 @@
       <van-grid-item
         icon="ellipsis"
         text="其他"
-        @click="hansleShowNotify"
+        @click="handleShowNotify"
       />
     </van-grid>
 
@@ -69,14 +69,14 @@ export default defineComponent({
       });
     }
 
-    function hansleShowNotify() {
+    function handleShowNotify() {
       Notify({ type: 'primary', message: '功能暂未开放' });
     }
 
     return {
       user: computed(() => base.user),
       handleUpdate,
-      hansleShowNotify,
+      handleShowNotify,
     };
   },
 });

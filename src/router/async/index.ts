@@ -1,3 +1,5 @@
+import { RouteRecordRaw } from 'vue-router';
+
 export default [
   {
     path: '/',
@@ -12,4 +14,4 @@ export default [
     name: 'About',
     component: () => import('@/views/about.vue'),
   },
-];
+] as Array<RouteRecordRaw>;

@@ -10,7 +10,7 @@
 |--------------------------------------------------
 */
 
-const Query = (options, dataSource) => {
+const Query = (options: { [x: string]: any; page: any; size: any; }, dataSource: any[]) => {
   // eslint-disable-next-line prefer-const
   let { page, size, ...other } = options;
   page = page || 1;
@@ -30,4 +30,4 @@ const Query = (options, dataSource) => {
   return { page, size, dataSource };
 };
 
-module.exports = Query;
+export default Query;

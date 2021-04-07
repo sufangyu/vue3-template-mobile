@@ -4,8 +4,10 @@ module.exports = {
     node: true,
   },
   extends: [
+    'airbnb-base',
     'plugin:vue/vue3-essential',
-    '@vue/airbnb',
+    'plugin:import/typescript',
+    'eslint:recommended',
     '@vue/typescript/recommended',
   ],
   parserOptions: {
@@ -16,6 +18,8 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'linebreak-style': 'off', // 回车换行风格
     'import/prefer-default-export': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'import/extensions': 'off',
     'prefer-object-spread': 'off',
     'prefer-promise-reject-errors': 'off',
     'no-restricted-properties': 'off',
@@ -55,5 +59,20 @@ module.exports = {
     '@typescript-eslint/no-inferrable-types': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {},
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', 'd.ts'],
+        paths: ['node_modules/', 'node_modules/@types'],
+      },
+      alias: {
+        map: [
+          ['@', './src'],
+        ],
+        extensions: ['.ts', '.js', '.jsx', '.json', '.vue'],
+      },
+    },
   },
 };

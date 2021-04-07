@@ -8,12 +8,13 @@ module.exports = {
 		{ value: 'refactor', name: '重构(refactor): 代码重构，注意和特性、修复区分开' },
 		{ value: 'perf', name: '性能(perf): 提升性能' },
 		{ value: 'test', name: '测试(test): 添加一个测试' },
+		{ value: 'build', name: '构建(build): 变更项目构建或外部依赖（例如scopes: webpack、gulp、npm等）' },
+		{ value: 'ci', name: '持续集成(ci): 更改持续集成软件的配置文件和package中的scripts命令，例如scopes: Travis, Circle等' },
 		{ value: 'revert', name: '回滚(revert): 代码回退' },
 		{ value: 'chore', name: '工具(chore):开发工具变动(构建、脚手架工具等)' },
-    { value: 'WIP', name: 'WIP:正在开发中' }
   ],
   scopes: [
-    {name: '账号模块'},
+    // {name: '账号模块'},
   ],
   // it needs to match the value for field type. Eg.: 'fix'
   /*

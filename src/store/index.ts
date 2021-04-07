@@ -6,14 +6,15 @@ import {
 import { StateType } from '@/types/store';
 
 
-const modulesFiles = require.context('./modules', true, /^.*?((?<!\.d\.ts)(?<!\.d))$/);
-// you do not need `import app from './modules/app'`
+const modulesFiles = import.meta.globEager('./modules/*.ts');
+
+// you do not need `import base from './modules/base'`
 // it will auto require all vuex module from modules file
 // eslint-disable-next-line no-shadow
-const modules = modulesFiles.keys().reduce((modules, modulePath) => {
-  // set './app.js' => 'app'
+const modules = Object.keys(modulesFiles).reduce((modules, modulePath) => {
+  // set 'modules/base.ts' => 'base'
   let moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, '$1');
-  const value = modulesFiles(modulePath);
+  moduleName = moduleName.replace(/^modules\//, '');
   let splitNameList = moduleName.split('-');
   if (splitNameList.length > 1) {
     splitNameList = splitNameList.map((item, index) => {
@@ -24,11 +25,10 @@ const modules = modulesFiles.keys().reduce((modules, modulePath) => {
     });
     moduleName = splitNameList.join('');
   }
+  const value = modulesFiles[modulePath];
   modules[moduleName] = value.default;
-
   return modules;
 }, {} as any);
-
 
 export const key: InjectionKey<Store<StateType>> = Symbol('InjectionKey');
 

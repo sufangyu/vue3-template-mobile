@@ -23,7 +23,7 @@ interface New {
  * @param params 参数
  */
 export const getList = (params = {}) => {
-  const url = 'http://localhost:3721/api/list';
+  const url = 'http://localhost:3000/api/list';
 
   return http.get<List>({
     url,
@@ -37,7 +37,7 @@ export const getList = (params = {}) => {
  * @param data 参数
  */
 export const createNews = (data: New) => {
-  const url = '/api/post';
+  const url = 'http://localhost:3000/api/post';
 
   return http.post<List>({
     url,

@@ -13,10 +13,10 @@ const routes: Array<RouteRecordRaw> = [
   ...routerAsyncMap,
   ...routerConstantMap,
   // 没有匹配对应的路由
-  {
-    path: '/:pathMatch(.*)*',
-    redirect: '/404',
-  },
+  // {
+  //   path: '/:pathMatch(.*)*',
+  //   redirect: '/404',
+  // },
 ];
 
 const router = createRouter({

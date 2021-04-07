@@ -16,6 +16,7 @@ ls:
   .ts: kebabcase | pointcase
   .d.ts: kebabcase | pointcase
   .vue: kebabcase | pointcase
+  .jsx: kebabcase | pointcase
   .tsx: kebabcase | pointcase
   .css: kebabcase | pointcase
   .scss: kebabcase | pointcase

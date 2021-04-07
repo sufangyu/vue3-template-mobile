@@ -4,14 +4,14 @@
  * 数值千分位格式化
  *
  * @export
- * @param {number} num 数字
+ * @param {number | string} num 数字
  * @returns {string}
  *
  * @example
  * 12345 => '12,345'
  * 12345.0 => '12,345'
  */
-export function toThousands(num: number): string {
+export function toThousands(num: number | string): string {
   let val = num.toString();
 
   if (!val.includes('.')) {

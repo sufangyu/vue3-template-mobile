@@ -1,9 +1,11 @@
 import { Toast } from 'vant';
-import { VanToast } from 'vant/types/toast.d';
+import { ComponentInstance } from 'vant/lib/utils';
 import { debounce } from 'lodash-es';
 
+// type Opt = typeof Toast;
+
 let needLoadingRequestCount = 0;
-let loadingInstance: VanToast | null = null;
+let loadingInstance: ComponentInstance | null = null;
 
 
 /**
